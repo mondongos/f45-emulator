@@ -14,11 +14,21 @@ export default class Exercise extends React.Component {
         //     rest: this.props.rest, 
         //     gif: this.props.gif
         // }
-        this.state = {name: "Arms", reps: 3, time: 40, rest: 15, gif: 'https://media.giphy.com/media/12KZKe1ppk5q3C/giphy.gif'}
+        this.state = {
+            name: "Arms", 
+            reps: 3, 
+            time: 40, 
+            rest: 15, 
+            gif: 'https://media.giphy.com/media/12KZKe1ppk5q3C/giphy.gif',
+            repCounter: 0
+        }
     }
 
-    manageReps = () => {
-
+    componentDidMount = () => {
+        const {reps, repCounter} = this.state
+        if(repCounter < reps) {
+            
+        }
     }
 
     render() {
