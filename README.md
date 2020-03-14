@@ -15,12 +15,25 @@ Emulating the software used by F45
     - general info (i.e. name, age, etc)
 
 ## Client 
-### Pages - Components
-- `Workout listing`
+### Pages
+- `WorkoutListing`
     - Box
     - Search 
 - `Workout`
     - Time
     - Exercise 
+- `CreateWorkout`
+    - ExerciseCreator
+    - Form
+
+### Components
+- Navbar
+- Box
+- Search 
+- Exercise 
+    - Reps
+    - Time
+- ExerciseCreator
+- Form
 
 

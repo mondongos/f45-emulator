@@ -17,9 +17,14 @@ export default class Exercise extends React.Component {
         this.state = {name: "Arms", reps: 3, time: 40, rest: 15, gif: 'https://media.giphy.com/media/12KZKe1ppk5q3C/giphy.gif'}
     }
 
+    manageReps = () => {
+
+    }
+
     render() {
         return (
             <Container className="exercise-box">
+                
                 <Timer totalSeconds={this.state.time}/>
                 <br></br>
                 <img src={this.state.gif}></img>
