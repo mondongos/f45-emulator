@@ -20,22 +20,35 @@ export default class Exercise extends React.Component {
             time: 40, 
             rest: 15, 
             gif: 'https://media.giphy.com/media/12KZKe1ppk5q3C/giphy.gif',
-            repCounter: 0
+            repCounter: 0,
+            secondsCounter: 0
         }
     }
 
-    componentDidMount = () => {
-        const {reps, repCounter} = this.state
-        if(repCounter < reps) {
-            
-        }
+    componentDidMount() {
+        this.timerCount()
+    }
+
+    timerCount = () => {
+        this.myInterval = setInterval(() => {
+            const { secondsCounter, time } = this.state
+            if (secondsCounter < time) {
+                this.setState(({ secondsCounter }) => ({
+                    secondsCounter: secondsCounter + 1
+                }))
+            }
+        }, 1000)
+    }
+
+    componentWillUnmount = () => {
+        clearInterval(this.myInterval)
     }
 
     render() {
         return (
             <Container className="exercise-box">
                 
-                <Timer totalSeconds={this.state.time}/>
+                <Timer time={this.state.time} secondsCounter={this.state.secondsCounter}/>
                 <br></br>
                 <img src={this.state.gif}></img>
             </Container>
